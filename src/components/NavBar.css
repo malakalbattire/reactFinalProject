@@ -1,0 +1,88 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.logo {
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.search {
+  justify-content: center;
+  width: 100%;
+}
+.searchInput {
+  width: 60%;
+}
+.serachIcon {
+  width: 100%;
+  font-size: 20px;
+  box-sizing: content-box;
+  padding: 5px;
+  width: 20px;
+  color: aliceblue;
+}
+.serachBtn {
+  background-color: black;
+  border: none;
+}
+.cartIcon {
+  color: black;
+}
+.ulCat {
+  gap: 60px;
+}
+.ulCat li {
+  width: calc((100% - 10px) / 3);
+}
+.categoryName {
+  height: 300px;
+  overflow: scroll;
+}
+.categoryName li {
+  padding: 0;
+  margin: 0;
+}
+.quantity {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+}
+.quan {
+  background-color: red;
+  text-decoration: none;
+}
+.nav-link:hover {
+  background-color: rgba(220, 220, 220, 0.545);
+}
+.nav-link.active {
+  border-bottom: 2px solid black;
+  background-color: rgba(220, 220, 220, 0.545);
+}
+@media only screen and (max-width: 1020px) {
+  .nav-item2row {
+    width: 100px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .search {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .searchInput {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 564px) {
+  .search {
+    width: 50%;
+  }
+  .searchInput {
+    width: 50%;
+  }
+}
