@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Categories() {
   const [categories, setCategories] = useState([]);
