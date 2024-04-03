@@ -15,10 +15,10 @@ export default function Categories() {
   }, []);
   return (
     <>
-      <div >
+      <div>
         {categories.map(catagory => (
           <NavLink className="container" to={`/category/${catagory._id}`} key={catagory._id}>
-            <img  src={catagory.image.secure_url} alt="slide image" />
+            <img src={catagory.image.secure_url} alt="slide image" />
           </NavLink>
         ))}
       </div>
