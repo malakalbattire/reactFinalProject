@@ -17,8 +17,6 @@ export default function Profile() {
         },
       });
       setProfile(data.user);
-
-      //console.log(data.user);
     } catch (error) {
       setError('error loading cart');
     } finally {
@@ -42,10 +40,7 @@ export default function Profile() {
           <img className="profileImg rounded-circle" src={profile.image.secure_url}></img>
           <h2 className="text-capitalize">{profile.userName}</h2>
         </div>
-
         <p> Email: {profile.email}</p>
-
-
         <div className="bg-light p-2">
           <h4>My Orders:</h4>
           <GetOrder />

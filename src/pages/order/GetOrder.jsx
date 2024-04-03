@@ -18,47 +18,12 @@ export default function GetOrder() {
         },
       });
       setGetOrder(data);
-      console.log(data);
     } catch (error) {
       setError('error loading cart');
     } finally {
       setLoader(false);
     }
   };
-  /*const cancelOrder = async (productId) => {
-    try {
-      const token = localStorage.getItem('userToken');
-      const { data } = await axios.patch(
-        `https://ecommerce-node4-five.vercel.app/order/cancel`,
-        {productId},
-        {
-          headers: {
-            Authorization: `Tariq__${token}`,
-          },
-        }
-      );
-      console.log(data);
-      if (data.message == 'success') {
-        toast.success('cart cleared successfully', {
-          position: 'top-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: 'dark',
-        });
-      }
-
-      
-    } catch (err) {
-      console.log("err");
-    }
-
-    
-  };
- */
 
   useEffect(() => {
     showOrders();

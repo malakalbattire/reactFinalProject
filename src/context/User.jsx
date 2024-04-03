@@ -1,14 +1,9 @@
-import { jwtDecode } from "jwt-decode";
-import  { createContext, useEffect, useState } from "react";
+import { jwtDecode } from 'jwt-decode';
+import { createContext, useEffect, useState } from 'react';
 
 export const UserContext = createContext();
 const UserContextProvider = ({ children }) => {
-  const [userToken, setUserToken] = useState(
-    localStorage.getItem("userToken")
-      ? localStorage.getItem("userToken")
-      : ""
-  );
-  console.log(localStorage)
+  const [userToken, setUserToken] = useState(localStorage.getItem('userToken') ? localStorage.getItem('userToken') : '');
   const [userName, setUserName] = useState(null);
   const getUserData = () => {
     if (userToken) {
@@ -17,16 +12,10 @@ const UserContextProvider = ({ children }) => {
     }
   };
   useEffect(() => {
-    userToken ? localStorage.setItem("userToken", userToken) : localStorage.removeItem("userToken");
+    userToken ? localStorage.setItem('userToken', userToken) : localStorage.removeItem('userToken');
     getUserData();
   }, [userToken]);
-  return (
-    <UserContext.Provider
-      value={{ setUserToken, setUserName, userName, userToken }}
-    >
-      {children}
-    </UserContext.Provider>
-  );
+  return <UserContext.Provider value={{ setUserToken, setUserName, userName, userToken }}>{children}</UserContext.Provider>;
 };
 
 export default UserContextProvider;

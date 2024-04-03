@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import './CategoriesName.css'
+import './CategoriesName.css';
 
 export default function CategoriesName() {
   const [categoriesName, setCategoriesName] = useState([]);
@@ -14,17 +14,13 @@ export default function CategoriesName() {
   }, []);
   return (
     <>
-    <div>
-      {categoriesName.map(catagory => (
-        <NavLink className="container text-decoration-none " to={`/category/${catagory.id}`}  key={catagory.id}>
-          <p className="unstyled text-secondary p-2 active " >{catagory.name}
-         
-          </p>
-        </NavLink>
-      ))}
-    </div>
-  </>
-  
-  
-  )
+      <div>
+        {categoriesName.map(catagory => (
+          <NavLink className="container text-decoration-none " to={`/category/${catagory.id}`} key={catagory.id}>
+            <p className="unstyled text-secondary p-2 active ">{catagory.name}</p>
+          </NavLink>
+        ))}
+      </div>
+    </>
+  );
 }

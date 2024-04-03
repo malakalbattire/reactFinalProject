@@ -1,18 +1,17 @@
 import { useState } from 'react';
 import axios from 'axios';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 import { Bounce, toast } from 'react-toastify';
 
 export default function FogotPassword() {
-    //const { setUserToken } = useContext(UserContext);
   const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
   const [loader, setLoder] = useState(false);
   const [user, setUser] = useState({
     email: '',
     password: '',
-    code:'',
+    code: '',
   });
   const validateData = async () => {
     const loginSchema = object({
@@ -24,7 +23,6 @@ export default function FogotPassword() {
       await loginSchema.validate(user, { abortEarly: false });
       return true;
     } catch (error) {
-      //console.log('validation error', error.errors);
       setErrors(error.errors);
       setLoder(false);
       return false;
@@ -52,12 +50,10 @@ export default function FogotPassword() {
           email: '',
           password: '',
         });
-        //console.log(data.token)
 
         if (data.message == 'success') {
           toast(' login successfully.');
           localStorage.setItem('userToken', data.token);
-          // setUserToken(data.token);
           navigate('/');
         }
       } catch (error) {
@@ -79,10 +75,13 @@ export default function FogotPassword() {
   };
   return (
     <>
-
-      {errors.length > 0 ? errors.map(error => <div key={error.id}>
-        <p>{error}</p>
-        </div>) : ''}
+      {errors.length > 0
+        ? errors.map(error => (
+            <div key={error.id}>
+              <p>{error}</p>
+            </div>
+          ))
+        : ''}
       <div className="container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
         <h2 className="text-center">Update Password</h2>
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
@@ -91,7 +90,7 @@ export default function FogotPassword() {
 
           <label className="text-muted">Code:</label>
           <input className="form-control" type="code" value={user.code} name="code" onChange={handelChange} />
-         
+
           <label className="text-muted">Password:</label>
           <input className="form-control" type="password" value={user.password} name="password" onChange={handelChange} />
 
@@ -102,11 +101,8 @@ export default function FogotPassword() {
           >
             {!loader ? ' Update Password' : 'wait..'}
           </button>
-          
-          
         </form>
       </div>
     </>
   );
-
 }

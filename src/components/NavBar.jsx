@@ -23,63 +23,60 @@ export default function NavBar() {
           SHEIN
         </NavLink>
         <div className="search d-flex">
-          <label></label>
           <input className="searchInput border border-dark" type="text"></input>
           <button className="serachBtn ">
             <BiSearch className="serachIcon" />
           </button>
         </div>
-   
-        
-          <div className="row " id="navbarSupportedContent">
-            <ul className=" d-flex justify-content-center  align-items-center navbar-nav  mb-lg-0 flex-nowrap flex-row">
-              <li className="nav-item dropdown">
-                <a className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <BiSolidUser />
-                </a>
-                <ul className="dropdown-menu unstyled">
-                  {userToken ? (
-                    <>
-                      <li>
-                        <NavLink className="dropdown-item text-capitalize" to="/profile">
-                          hello {userName}
-                        </NavLink>
-                      </li>
-                      <li>
-                        <button onClick={logout} className="dropdown-item text-capitalize">
-                          Log out
-                        </button>
-                      </li>
-                    </>
-                  ) : (
-                    <>
-                      <li>
-                        <NavLink className="dropdown-item" to="/signin">
-                          Sign In
-                        </NavLink>
-                      </li>
-                      <li>
-                        <NavLink className="dropdown-item" to="/signup">
-                          Sign Up
-                        </NavLink>
-                      </li>
-                    </>
-                  )}
-                </ul>
-              </li>
-              <li>
-                <NavLink className="navLinkk cart" to="/cart">
-                  <div className="container d-flex align-items-center ">
-                    <AiOutlineShoppingCart className="cartIcon" />
-                    <div className="quantity d-flex  ">
-                      <ProductsQantity />
-                    </div>
+
+        <div className="row " id="navbarSupportedContent">
+          <ul className=" d-flex justify-content-center  align-items-center navbar-nav  mb-lg-0 flex-nowrap flex-row">
+            <li className="nav-item dropdown">
+              <a className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <BiSolidUser />
+              </a>
+              <ul className="dropdown-menu unstyled">
+                {userToken ? (
+                  <>
+                    <li>
+                      <NavLink className="dropdown-item text-capitalize" to="/profile">
+                        hello {userName}
+                      </NavLink>
+                    </li>
+                    <li>
+                      <button onClick={logout} className="dropdown-item text-capitalize">
+                        Log out
+                      </button>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink className="dropdown-item" to="/signin">
+                        Sign In
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink className="dropdown-item" to="/signup">
+                        Sign Up
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </li>
+            <li>
+              <NavLink className="navLinkk cart" to="/cart">
+                <div className="container d-flex align-items-center ">
+                  <AiOutlineShoppingCart className="cartIcon" />
+                  <div className="quantity d-flex  ">
+                    <ProductsQantity />
                   </div>
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-      
+                </div>
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className=" category container d-flex justify-content-center flex-nowrap ">
         <ul className=" ulCat d-flex flex-row justify-content-center navbar-nav mr-auto ">

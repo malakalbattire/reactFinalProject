@@ -19,13 +19,12 @@ export default function SendCode() {
       await loginSchema.validate(user, { abortEarly: false });
       return true;
     } catch (error) {
-     // console.log('validation error', error.errors);
       setErrors(error.errors);
       setLoder(false);
       return false;
     }
   };
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setLoder(true);
 
@@ -36,26 +35,21 @@ export default function SendCode() {
         });
         setUser({
           email: '',
-         
         });
-        //console.log(data.token)
-          toast.success(data.message , {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: true,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-            });
-          localStorage.setItem('userToken', data.token);
-          // setUserToken(data.token);
-          navigate('/forgotPassword');
-        
+        toast.success(data.message, {
+          position: 'top-right',
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light',
+          transition: Bounce,
+        });
+        localStorage.setItem('userToken', data.token);
+        navigate('/forgotPassword');
       } catch (error) {
-        
         toast.error(error.response.status, {
           position: 'bottom-center',
           autoClose: 5000,
@@ -81,28 +75,28 @@ export default function SendCode() {
   };
   return (
     <>
-    {errors.length > 0 ?errors.map(error=>
-    <div key={error.id}>
-      <p>{error}</p>
-
-    </div>
-      
-      ):''}
-    <div className="container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
-      <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
-        <h4 className="text-center">Forgot Password</h4>
-        <label className="text-muted">Email:</label>
-        <input className="form-control" type="email" value={user.email} name="email" onChange={handelChange}></input>
-        <button
-          type="submit d-flex p-3 "
-          className="btn btn-outline-success w-100 text-white bg-dark"
-          disabled={loader ? 'disabled' : null}
-        >
-          {' '}
-          {!loader ? 'Send code' : 'wait..'}
-        </button>
-      </form>
-    </div>
+      {errors.length > 0
+        ? errors.map(error => (
+            <div key={error.id}>
+              <p>{error}</p>
+            </div>
+          ))
+        : ''}
+      <div className="container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
+        <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
+          <h4 className="text-center">Forgot Password</h4>
+          <label className="text-muted">Email:</label>
+          <input className="form-control" type="email" value={user.email} name="email" onChange={handelChange}></input>
+          <button
+            type="submit d-flex p-3 "
+            className="btn btn-outline-success w-100 text-white bg-dark"
+            disabled={loader ? 'disabled' : null}
+          >
+            {' '}
+            {!loader ? 'Send code' : 'wait..'}
+          </button>
+        </form>
+      </div>
     </>
   );
 }

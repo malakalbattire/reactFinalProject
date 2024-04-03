@@ -3,8 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-body{
-    height: 100vh;
+body {
+  height: 100vh;
 }
 .categoryContainer {
   width: fit-content;

@@ -21,11 +21,9 @@ export default function ProductDetails() {
   const [productDetails, setProductDetails] = useState([]);
   const [loader, setLoader] = useState(true);
   const [error, setError] = useState('');
-  //const [values, setValues] = useState('');
   const getProductDetails = async () => {
     try {
       const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products/${id}`);
-      console.log(data.product);
       setProductDetails(data.product);
     } catch (error) {
       setError('error loading products');
@@ -165,42 +163,41 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-          <div className='container p-5 d-flex flex-column'>
+          <div className="container p-5 d-flex flex-column">
             <h4>Reviews:</h4>
-            <div className='d-flex gap-3'>
-            <form className="d-flex flex-column gap-4 w-50"onSubmit={handelSubmit}>
-              
-              <input placeholder="Write your Review..."
-                className="form-control rounded-1 w-100"
-                type="comment"
-                name="comment"
-                value={values.comment}
-                onChange={e => setValues({ ...values, comment: e.target.value })}
-              />
+            <div className="d-flex gap-3">
+              <form className="d-flex flex-column gap-4 w-50" onSubmit={handelSubmit}>
+                <input
+                  placeholder="Write your Review..."
+                  className="form-control rounded-1 w-100"
+                  type="comment"
+                  name="comment"
+                  value={values.comment}
+                  onChange={e => setValues({ ...values, comment: e.target.value })}
+                />
 
-              <Rating
-                name="simple-controlled"
-                value={productDetails.rating}
-                onChange={event => {
-                  setValues({ ...values, rating: event.target.value });
-                }}
-              />
-              <button className='text-white bg-dark' type="submit">submit</button>
-            </form>
-            <div className='container bg-light p-4'>
-            {productDetails.reviews.map(revi => (
-              <div className="review bg-white" key={revi._id}>
-                <p>{revi.review}</p>
-                <h2>{revi.comment}</h2>
-                <span>{revi.rating}</span>
-                <h3>{revi.name}</h3>
+                <Rating
+                  name="simple-controlled"
+                  value={productDetails.rating}
+                  onChange={event => {
+                    setValues({ ...values, rating: event.target.value });
+                  }}
+                />
+                <button className="text-white bg-dark" type="submit">
+                  submit
+                </button>
+              </form>
+              <div className="container bg-light p-4">
+                {productDetails.reviews.map(revi => (
+                  <div className="review bg-white" key={revi._id}>
+                    <p>{revi.review}</p>
+                    <h2>{revi.comment}</h2>
+                    <span>{revi.rating}</span>
+                    <h3>{revi.name}</h3>
+                  </div>
+                ))}
               </div>
-            ))}</div>
-
-
             </div>
-            
-            
           </div>
         </>
       }

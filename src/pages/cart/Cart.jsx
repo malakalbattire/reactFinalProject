@@ -21,8 +21,6 @@ export default function Cart() {
         },
       });
       setItem(data.products);
-
-      //console.log(data.products);
     } catch (error) {
       setError('error loading cart');
     } finally {
@@ -45,7 +43,6 @@ export default function Cart() {
           },
         }
       );
-      //console.log(data);
       if (data.message == 'success') {
         toast.success('product removed successfully', {
           position: 'top-right',
@@ -72,7 +69,6 @@ export default function Cart() {
         theme: 'dark',
         transition: Bounce,
       });
-      // console.log(error);
     }
   };
 
@@ -88,7 +84,6 @@ export default function Cart() {
           },
         }
       );
-      // console.log(data);
       if (data.message == 'success') {
         toast.success('cart cleared successfully', {
           position: 'top-right',
@@ -119,7 +114,6 @@ export default function Cart() {
           },
         }
       );
-      // console.log(data);
       return data;
     } catch (err) {
       console.log(err);
@@ -137,7 +131,6 @@ export default function Cart() {
           },
         }
       );
-      //console.log(data);
       return data;
     } catch (err) {
       console.log(err);
@@ -215,21 +208,18 @@ export default function Cart() {
             <div className=" d-flex align-items-center w-100 border-bottom ">
               <h5 className="w-50">Discount:</h5>
               <h5 className="d-flex w-50 justify-content-end">
-               {item.reduce((total, product) => total + product.details.discount * product.quantity, 0) + '$'}
+                {item.reduce((total, product) => total + product.details.discount * product.quantity, 0) + '$'}
               </h5>
-
             </div>
             <div className="subtotal d-flex align-items-center w-100">
               <h5 className="w-50">Subtotal:</h5>
               <h5 className="d-flex w-50 justify-content-end">
-              {item.reduce(
-                (total, product) => total + product.details.price * product.quantity - product.details.discount * product.quantity,
-                0
-              ) + '$'}
+                {item.reduce(
+                  (total, product) => total + product.details.price * product.quantity - product.details.discount * product.quantity,
+                  0
+                ) + '$'}
               </h5>
             </div>
-            
-            
           </div>
           <NavLink className="btn btn-outline-success text-white bg-dark w-100 " to="/order">
             place order

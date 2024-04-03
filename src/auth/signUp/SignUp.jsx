@@ -105,13 +105,10 @@ export default function SignUp() {
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <label className="text-muted">User name:</label>
           <input className="form-control" type="text" value={user.userName} name="userName" onChange={handelChange} />
-
           <label className="text-muted">Email:</label>
           <input className="form-control" type="email" value={user.email} name="email" onChange={handelChange} />
-
           <label className="text-muted">Password:</label>
           <input className="form-control" type="password" value={user.password} name="password" onChange={handelChange} />
-
           <label className="text-muted">image</label>
           <input className="form-control" type="file" name="image" onChange={handelImageChange} />
 

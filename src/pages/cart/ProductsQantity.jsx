@@ -12,8 +12,6 @@ export default function ProductsQantity() {
       },
     });
     setItem(data.products);
-
-    //console.log(data.products);
   };
   useEffect(() => {
     showCart();

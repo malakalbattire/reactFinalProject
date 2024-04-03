@@ -20,7 +20,6 @@ export default function CreateOrder() {
           Authorization: `Tariq__${token}`,
         },
       });
-
       setCarts(data.products);
       setError('');
     } catch (error) {
@@ -65,7 +64,6 @@ export default function CreateOrder() {
         theme: 'light',
         transition: Bounce,
       });
-
     } catch (error) {
       toast.error('error create order', {
         position: 'bottom-right',
@@ -88,7 +86,7 @@ export default function CreateOrder() {
 
   return (
     <div>
-      <h2 className='p-2'>Place Order:</h2>
+      <h2 className="p-2">Place Order:</h2>
       {error ?? <p className="error"> {error}</p>}
       {carts.map(products => (
         <>

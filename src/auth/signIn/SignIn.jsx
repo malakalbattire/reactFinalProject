@@ -4,14 +4,10 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 import { Bounce, toast } from 'react-toastify';
 
-import {UserContext} from '../../context/User'
-
+import { UserContext } from '../../context/User';
 
 export default function SignIn() {
-
-  const {setUserToken}=useContext(UserContext);
-
-  
+  const { setUserToken } = useContext(UserContext);
 
   const navigate = useNavigate();
   const [errors, setErrors] = useState([]);
@@ -29,7 +25,6 @@ export default function SignIn() {
       await loginSchema.validate(user, { abortEarly: false });
       return true;
     } catch (error) {
-     // console.log('validation error', error.errors);
       setErrors(error.errors);
       setLoder(false);
       return false;
@@ -45,8 +40,7 @@ export default function SignIn() {
   const handleSubmit = async e => {
     e.preventDefault();
     setLoder(true);
-    const validate =await validateData();
-console.log(validate)
+    const validate = await validateData();
     if (await validateData()) {
       try {
         const { data } = await axios.post(`https://ecommerce-node4-five.vercel.app/auth/signin`, {
@@ -60,21 +54,10 @@ console.log(validate)
 
         if (data.message == 'success') {
           toast(' login successfully.');
-         
-         // localStorage.setItem('userToken', data.token);
-          //setUserToken('userToken',data);
-       // navigate('/');
-      // setUserToken('userToken',data);
         }
-
-
-       
 
         navigate('/');
         setUserToken(data.token);
-        console.log(data.token)
-        
-        //localStorage.setItem('userToken', data.token);
       } catch (error) {
         toast.error(error.response.data.message, {
           position: 'bottom-center',
@@ -92,23 +75,23 @@ console.log(validate)
       }
     }
   };
-  
+
   return (
     <>
-      {errors.length > 0 ? errors.map(error => 
-      <div key={error.id}>
-         <p>{error}</p>
-      </div>
-     ) : ''}
+      {errors.length > 0
+        ? errors.map(error => (
+            <div key={error.id}>
+              <p>{error}</p>
+            </div>
+          ))
+        : ''}
       <div className="signin container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
         <h2 className="text-center">Sign in</h2>
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <label className="text-muted">Email:</label>
           <input className="form-control" type="email" value={user.email} name="email" onChange={handelChange} />
-
           <label className="text-muted">Password:</label>
           <input className="form-control" type="password" value={user.password} name="password" onChange={handelChange} />
-
           <button
             type="submit d-flex p-3 "
             className="btn btn-outline-success w-100 text-white bg-dark"

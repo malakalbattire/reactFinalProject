@@ -26,11 +26,9 @@ export default function AllProducts() {
     }
     try {
       const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products?page=${page}&price[gte]=${min}&price[lte]=${max}`);
-      //console.log(data);
       setAllProducts(data.products);
       setLoader(false);
     } catch (error) {
-      console.log(error);
       setLoader(false);
     }
   };
@@ -38,11 +36,9 @@ export default function AllProducts() {
   const getProductsByPrice = async (page, price) => {
     try {
       const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products?page=${page}&price=${price}`);
-      console.log(data);
       setAllProducts(data.products);
       setLoader(false);
     } catch (error) {
-      console.log(error);
       setLoader(false);
     } finally {
       setLoader(false);
@@ -51,11 +47,9 @@ export default function AllProducts() {
   const getProductsSorted = async (page, sort) => {
     try {
       const { data } = await axios.get(`https://ecommerce-node4.vercel.app/products?page=${page}&sort=${sort}`);
-      // console.log(data);
       setAllProducts(data.products);
       setLoader(false);
     } catch (error) {
-      console.log(error);
       setLoader(false);
     }
   };
@@ -65,7 +59,6 @@ export default function AllProducts() {
     try {
       const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products?page=${currentPage}&limit=${limit}`);
       setAllProducts(data.products);
-      //console.log(data.products);
       const numOfPage = data.total / limit;
       setTotalPages(numOfPage);
     } catch (error) {
@@ -137,8 +130,8 @@ export default function AllProducts() {
     <>
       {error ?? <p className="error"> {error}</p>}
       <div className="d-flex flex-column gap-4 ">
-        <div className='d-flex w-100 gap-3 justify-content-center'>
-          <select  onChange={e => getProductsSorted(page, e.target.value, e)}>
+        <div className="d-flex w-100 gap-3 justify-content-center">
+          <select onChange={e => getProductsSorted(page, e.target.value, e)}>
             <option selected>Sort Options</option>
             <option value="price">price</option>
             <option value="-price">-price</option>
@@ -156,7 +149,7 @@ export default function AllProducts() {
               getProductsByMin(page, min, max);
             }}
           >
-            <input 
+            <input
               type="text"
               value={min}
               onChange={e => {
@@ -164,7 +157,7 @@ export default function AllProducts() {
               }}
               placeholder="min"
             />
-            <input 
+            <input
               type="text"
               value={max}
               onChange={e => {
@@ -172,7 +165,7 @@ export default function AllProducts() {
               }}
               placeholder="max"
             />
-            <input  type="submit" value="Get" />
+            <input type="submit" value="Get" />
           </form>
           <button onClick={ResetInputs}>Reset</button>
         </div>

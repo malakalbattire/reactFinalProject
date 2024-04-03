@@ -7,7 +7,6 @@ import { BiSolidUser } from 'react-icons/bi';
 
 export default function Home() {
   const { userName } = useContext(UserContext);
-  
 
   return (
     <div className="home vh-100">
@@ -19,7 +18,6 @@ export default function Home() {
           <>
             <NavLink className="navLinkk " to="/profile">
               <h2 className="p-3 text-capitalize d-flex align-items-center text-decoration-none">
-                
                 <BiSolidUser />
                 Hello {userName}!
               </h2>

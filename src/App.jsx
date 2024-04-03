@@ -28,7 +28,6 @@ import OrderDetails from './pages/order/OrderDetails';
 import Reviews from './pages/reviews/Reviews';
 import ProductsQantity from './pages/cart/ProductsQantity';
 
-
 function App() {
   const router = createBrowserRouter([
     {
@@ -37,11 +36,7 @@ function App() {
       children: [
         {
           path: '/',
-          element:
-          
-          
-            <Home />,
-            
+          element: <Home />,
         },
         {
           path: '/categories',
@@ -58,22 +53,23 @@ function App() {
         {
           path: 'products/:id',
           element: <ProductDetails />,
-        },{
+        },
+        {
           path: '/reviews',
           element: <Reviews />,
-        }
-        ,{
+        },
+        {
           path: '/productQuantity',
           element: <ProductsQantity />,
-        }
+        },
 
-        ,{
+        {
           path: '/allProducts',
-          element:
-          <ProtectedRoutes>
-            <AllProducts />
-          </ProtectedRoutes>
-          
+          element: (
+            <ProtectedRoutes>
+              <AllProducts />
+            </ProtectedRoutes>
+          ),
         },
         {
           path: '/signin',
@@ -93,66 +89,56 @@ function App() {
         },
         {
           path: '/signup',
-          element:
-          
-            <SignUp />
-          
+          element: <SignUp />,
         },
         {
           path: '/cart',
-          element:
-          <ProtectedRoutesCart>
-             <Cart />
+          element: (
+            <ProtectedRoutesCart>
+              <Cart />
+            </ProtectedRoutesCart>
+          ),
+        },
+        {
+          path: 'category/:id',
+          element: <Category />,
+        },
+        {
+          path: '/sendCode',
+          element: <SendCode />,
+        },
 
-          </ProtectedRoutesCart>
-         
-          
+        {
+          path: '/forgotPassword',
+          element: <ForgotPassword />,
         },
         {
-          path:'category/:id',
-          element:<Category/>,
+          path: '/protectedRouteMessage',
+          element: <ProtectedRoutesMessage />,
         },
         {
-          path:'/sendCode',
-          element:<SendCode/>,
-        },
-        
-        {
-          path:'/forgotPassword',
-          element:<ForgotPassword/>,
+          path: '/protectedRoutesCartMessage',
+          element: <ProtectedRoutesCartMessage />,
         },
         {
-          path:'/protectedRouteMessage',
-          element:<ProtectedRoutesMessage/>,
+          path: '*',
+          element: <NotFound />,
         },
         {
-          path:'/protectedRoutesCartMessage',
-          element:<ProtectedRoutesCartMessage/>,
-        },
-        {
-          path:'*',
-          element:<NotFound/>,
-        },
-        {
-          path:'/orderdetails',
-          element:<OrderDetails/>,
+          path: '/orderdetails',
+          element: <OrderDetails />,
         },
       ],
     },
   ]);
-  return(
+  return (
     <>
-    <UserContextProvider>
-    <RouterProvider router={router} />
+      <UserContextProvider>
+        <RouterProvider router={router} />
+      </UserContextProvider>
 
-    </UserContextProvider>
-    
-    
- 
-     
-     <ToastContainer />
+      <ToastContainer />
     </>
-   
-  ) 
+  );
 }
 export default App;

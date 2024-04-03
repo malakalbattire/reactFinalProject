@@ -2,7 +2,6 @@ import { Pagination } from 'react-bootstrap';
 
 export default function PaginationPro({ currentPage, totalPages, onPageChange }) {
   const pageItems = [];
-  console.log(pageItems);
   for (let i = 1; i <= totalPages; i++) {
     pageItems.push(
       <Pagination.Item key={i} active={i === currentPage} onClick={() => onPageChange(i)}>
@@ -11,14 +10,15 @@ export default function PaginationPro({ currentPage, totalPages, onPageChange })
     );
   }
 
-  return (<>
-  <div className="container d-flex justify-content-center">
+  return (
+    <>
+      <div className="container d-flex justify-content-center">
         <Pagination>
-            <Pagination.Prev onClick={()=>onPageChange(currentPage - 1)} disabled={currentPage === 1}/>
-            {pageItems}
-            <Pagination.Next onClick={()=>onPageChange(currentPage + 1)} disabled={currentPage === totalPages}/>
+          <Pagination.Prev onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1} />
+          {pageItems}
+          <Pagination.Next onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages} />
         </Pagination>
-        </div>
-  
-  </>)
+      </div>
+    </>
+  );
 }
