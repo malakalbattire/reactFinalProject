@@ -91,7 +91,7 @@ export default function GetOrder() {
                     <span className="d-flex gap-3 p-2 flex-wrap">
                       {order.products.map(product => (
                         <>
-                          <div className='d-flex flex-column  ' key={product._id}>
+                          <div className="d-flex flex-column  " key={product._id}>
                             <p className="text-muted">X{product.quantity}</p>
 
                             <img className="productImg d-flex " src={product.productId.mainImage.secure_url}></img>

@@ -18,14 +18,14 @@ export default function Profile() {
       });
       setProfile(data.user);
 
-     //console.log(data.user);
+      //console.log(data.user);
     } catch (error) {
       setError('error loading cart');
     } finally {
       setLoader(false);
     }
   };
-  
+
   useEffect(() => {
     showCart();
   }, []);
@@ -40,17 +40,16 @@ export default function Profile() {
       <div className="container d-flex flex-column shadow p-3 mb-5 bg-body rounded gap-4">
         <div className="d-flex  align-items-center gap-4">
           <img className="profileImg rounded-circle" src={profile.image.secure_url}></img>
-          <h2 className='text-capitalize'>{profile.userName}</h2>
+          <h2 className="text-capitalize">{profile.userName}</h2>
         </div>
 
         <p> Email: {profile.email}</p>
-        
 
-        <div className='bg-light p-2'>
-          <h4 >My Orders:</h4>
-          <GetOrder/>
+
+        <div className="bg-light p-2">
+          <h4>My Orders:</h4>
+          <GetOrder />
         </div>
-        
       </div>
     </>
   );
