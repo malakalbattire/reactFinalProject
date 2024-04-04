@@ -18,7 +18,7 @@ export default function Categories() {
       
         {categories.map(catagory => (
           <NavLink className="container" to={`/category/${catagory._id}`} key={catagory._id}>
-            <img src={catagory.image.secure_url} alt="slide image" />
+            <img className='categoryImgg' src={catagory.image.secure_url} alt="slide image" />
           </NavLink>
         ))}
      

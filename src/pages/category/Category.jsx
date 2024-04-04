@@ -1,7 +1,7 @@
 import './Category.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
 import { NavLink, useParams } from 'react-router-dom';
 import Loader from '../loader/Loader';
 import { Bounce, toast } from 'react-toastify';
@@ -70,12 +70,12 @@ export default function Category() {
     return <Loader />;
   }
   return (
-    <div className="categoryContainer">
+    <div className="categoryContainer  ">
       {error ?? <p className="error"> {error}</p>}
       {categoryProducts.length > 0 ? (
         categoryProducts.map(product => (
           <>
-            <div className="procont">
+            <div className="procont d-flex flex-wrap">
               <NavLink className="product navLinkk " key={product.id} to={`/products/${product.id}`}>
                 <img className="categoryImg" src={product.mainImage.secure_url}></img>
                 <span className="productName">{product.name}</span>

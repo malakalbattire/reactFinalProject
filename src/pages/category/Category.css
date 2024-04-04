@@ -7,12 +7,25 @@ body {
   height: 100vh;
 }
 .categoryContainer {
-  width: fit-content;
-  box-sizing: border-box;
   display: flex;
-  gap: 50px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+@media screen and (max-width: 1000px) {
+  .procont {
+    width: 250px !important;
+  }
+}
+@media screen and (max-width: 620px) {
+  .sort input {
+    width: 80px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sort input {
+    width: 50px;
+  }
 }
 .navLinkk {
   display: flex;
