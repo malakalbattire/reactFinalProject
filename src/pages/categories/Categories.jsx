@@ -1,4 +1,4 @@
-/*import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
@@ -22,11 +22,4 @@ export default function Categories() {
       </div>
     </>
   );
-}
-*/
-
-export default function Categories() {
-  return (
-    <div>Categories</div>
-  )
 }
