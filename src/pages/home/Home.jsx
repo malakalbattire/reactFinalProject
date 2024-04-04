@@ -28,7 +28,7 @@ export default function Home() {
         )}
         <Hero />
 
-        <div className="container ">
+        <div className=" container" align="center">
           <Categories></Categories>
         </div>
       </div>
