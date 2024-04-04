@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 import { Bounce, toast } from 'react-toastify';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 
 import { UserContext } from '../../context/User';
 

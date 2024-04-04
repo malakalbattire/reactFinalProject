@@ -3,6 +3,7 @@ import axios from 'axios';
 import { object, string } from 'yup';
 import { toast, Bounce } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 
 export default function SignUp() {
   const navigate = useNavigate();

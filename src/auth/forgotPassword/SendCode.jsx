@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 import { Bounce, toast } from 'react-toastify';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 
 export default function SendCode() {
   const navigate = useNavigate();

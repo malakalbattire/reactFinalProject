@@ -1,6 +1,7 @@
 import './Category.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 import { NavLink, useParams } from 'react-router-dom';
 import Loader from '../loader/Loader';
 import { Bounce, toast } from 'react-toastify';

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
 import { NavLink } from 'react-router-dom';
 import Loader from '../loader/Loader';
 import '../category/Category.css';

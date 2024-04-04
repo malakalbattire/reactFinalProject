@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import Loader from '../loader/Loader';
 import './Profile.css';
 import GetOrder from '../order/GetOrder';

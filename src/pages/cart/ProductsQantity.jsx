@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import { useState, useEffect } from 'react';
 import './Cart.css';
 

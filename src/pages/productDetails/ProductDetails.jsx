@@ -1,6 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import Loader from '../loader/Loader';
 import { Bounce, toast } from 'react-toastify';
 import { Navigation, Autoplay, A11y } from 'swiper/modules';

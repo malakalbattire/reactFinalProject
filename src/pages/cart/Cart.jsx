@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import { useState, useEffect } from 'react';
 import './Cart.css';
 import { Bounce, toast } from 'react-toastify';

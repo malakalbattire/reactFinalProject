@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import { useEffect, useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
 import Loader from '../loader/Loader';

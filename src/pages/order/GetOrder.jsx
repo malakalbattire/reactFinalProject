@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import './GetOrder.css';
 import axios from 'axios';
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
+
 import Loader from '../loader/Loader';
 import { NavLink } from 'react-router-dom';
 
