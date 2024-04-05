@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './ProductDetails.css'
 import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
 
 import Loader from '../loader/Loader';
@@ -115,8 +116,8 @@ export default function ProductDetails() {
       {error ?? <p className="error"> {error}</p>}
       {
         <>
-          <div className="container d-flex ">
-            <div className="container w-50">
+          <div className="productDetails container d-flex ">
+            <div className=" mm container w-50">
               <>
                 <div className="">
                   <Swiper
@@ -143,7 +144,7 @@ export default function ProductDetails() {
                 </div>
               </>
             </div>
-            <div className="container w-50">
+            <div className="mm containerw-50">
               <h2>{productDetails.name}</h2>
               <p className="border-bottom p-2 text-muted">{productDetails.description}</p>
               <div className="row">
@@ -167,8 +168,8 @@ export default function ProductDetails() {
           </div>
           <div className="container p-5 d-flex flex-column">
             <h4>Reviews:</h4>
-            <div className="d-flex gap-3">
-              <form className="d-flex flex-column gap-4 w-50" onSubmit={handelSubmit}>
+            <div className="reviews d-flex gap-3">
+              <form className="d-flex flex-column gap-4 " onSubmit={handelSubmit}>
                 <input
                   placeholder="Write your Review..."
                   className="form-control rounded-1 w-100"

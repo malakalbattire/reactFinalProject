@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios'
-
+import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
 import { useEffect, useState } from 'react';
 import { Bounce, toast } from 'react-toastify';
 import Loader from '../loader/Loader';
+import OrderSummery from '../order/OrderSummery';
 
 export default function CreateOrder() {
   const [loader, setLoader] = useState(true);
@@ -90,29 +90,43 @@ export default function CreateOrder() {
     <div>
       <h2 className="p-2">Place Order:</h2>
       {error ?? <p className="error"> {error}</p>}
-      {carts.map(products => (
-        <>
-          <div className="container bg-light d-flex gap-4 p-2   align-items-center">
-            <div className="container w-100 d-flex gap-2">
-              <img className="cartImg" src={products.details.mainImage.secure_url}></img>
-              <div className="d-flex flex-column w-100">
-                <span>{products.details.name}</span>
-                <div className=" container d-flex justify-content-between align-items-end">
-                  <div>
-                    <span className="text-danger">{products.details.price}$</span>
-                  </div>
-                  <div className="d-flex gap-3">
-                    <div className="increasCont d-flex   ">
-                      <h2>{products.quantity}</h2>
+      <div className="container">
+        {carts.map(products => (
+          <>
+            <div className="container ">
+              <div className="container bg-light d-flex gap-4 p-2   align-items-center">
+                <div className="container w-100 d-flex gap-2">
+                  <img className="cartImg" src={products.details.mainImage.secure_url}></img>
+                  <div className="d-flex flex-column w-100">
+                    <span>{products.details.name}</span>
+                    <div className=" container d-flex justify-content-between align-items-end">
+                      <div>
+                        <span className="text-danger">{products.details.price}$</span>
+                      </div>
+                      <div className="d-flex gap-3">
+                        <div className="increasCont d-flex   ">
+                          <h2>{products.quantity}</h2>
+                        </div>
+                        <div></div>
+                      </div>
                     </div>
-                    <div></div>
                   </div>
                 </div>
               </div>
             </div>
+          </>
+        ))}
+
+        <div className="container p-2">
+
+          <div className='container'>
+          <OrderSummery></OrderSummery>
+
           </div>
-        </>
-      ))}
+          
+        </div>
+      </div>
+
       <form onSubmit={handelSubmit} className="d-flex flex-column gap-3   ">
         <div className="d-flex flex-column">
           <label>coupon Name:</label>

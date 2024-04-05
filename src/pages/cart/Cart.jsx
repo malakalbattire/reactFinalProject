@@ -9,6 +9,7 @@ import Loader from '../loader/Loader';
 import { FaTrash } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
 import AllProducts from '../allProducts/AllProducts';
+import OrderSummery from '../order/OrderSummery';
 
 export default function Cart() {
   const [loader, setLoader] = useState([]);
@@ -199,30 +200,7 @@ export default function Cart() {
           </>
         ))}
         <div className="container flex-end">
-          <div className="w-100 d-flex flex-column">
-            <div className="d-flex align-items-center w-100">
-              <h5 className="w-50">Total:</h5>
-              <h5 className="d-flex w-50 justify-content-end">
-                {item.reduce((total, product) => total + product.details.price * product.quantity, 0) + '$'}
-              </h5>
-            </div>
-
-            <div className=" d-flex align-items-center w-100 border-bottom ">
-              <h5 className="w-50">Discount:</h5>
-              <h5 className="d-flex w-50 justify-content-end">
-                {item.reduce((total, product) => total + product.details.discount * product.quantity, 0) + '$'}
-              </h5>
-            </div>
-            <div className="subtotal d-flex align-items-center w-100">
-              <h5 className="w-50">Subtotal:</h5>
-              <h5 className="d-flex w-50 justify-content-end">
-                {item.reduce(
-                  (total, product) => total + product.details.price * product.quantity - product.details.discount * product.quantity,
-                  0
-                ) + '$'}
-              </h5>
-            </div>
-          </div>
+          <OrderSummery></OrderSummery>
           <NavLink className="btn btn-outline-success text-white bg-dark w-100 " to="/order">
             place order
           </NavLink>

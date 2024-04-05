@@ -1,0 +1,30 @@
+@media screen and (max-width: 900px) {
+.productDetails{
+    flex-direction: column;
+}
+.mm{
+    width: 100% !important;
+}
+.reviews{
+    flex-direction: column;
+   
+
+}
+.reviews form{
+    width:100% !important;
+    
+}
+
+}
+.mm{
+   
+    width: 50% ;
+}
+.productDetails{
+gap: 30px;
+
+}
+.reviews form{
+    width:50%
+    
+}
