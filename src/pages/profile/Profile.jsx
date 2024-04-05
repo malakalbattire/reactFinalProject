@@ -35,9 +35,10 @@ export default function Profile() {
   }
   return (
     <>
+    <div className='padBottom'>
       {error ?? <p className="error"> {error}</p>}
 
-      <div className="container d-flex flex-column shadow p-3 mb-5 bg-body rounded gap-4">
+      <div className=" container d-flex flex-column shadow p-3 mb-5 bg-body rounded gap-4">
         <div className="d-flex  align-items-center gap-4">
           <img className="profileImg rounded-circle" src={profile.image.secure_url}></img>
           <h2 className="text-capitalize">{profile.userName}</h2>
@@ -48,6 +49,8 @@ export default function Profile() {
           <GetOrder />
         </div>
       </div>
+      </div>
     </>
+    
   );
 }

@@ -101,7 +101,7 @@ export default function SignUp() {
             </div>
           ))
         : ''}
-      <div className="singup container vh-100 d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
+      <div className="singup padBottom container vh-100 d-flex justify-content-center aligin-items-center flex-column w-50 gap-3">
         <h2 className="text-center">Sign up</h2>
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <label className="text-muted">User name:</label>

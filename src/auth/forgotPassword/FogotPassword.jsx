@@ -84,7 +84,7 @@ export default function FogotPassword() {
             </div>
           ))
         : ''}
-      <div className="container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
+      <div className=" container d-flex justify-content-center aligin-items-center flex-column w-50 gap-3">
         <h2 className="text-center">Update Password</h2>
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <label className="text-muted">Email:</label>

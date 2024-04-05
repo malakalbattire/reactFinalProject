@@ -17,7 +17,7 @@ export default function NavBar() {
   };
 
   return (
-    <nav className="navbar sticky-top d-flex flex-column gap-2 fl navbar-expand-lg navbar-light  shadow-sm p-3 mb-5 bg-white  ">
+    <nav className="navbar z-3 sticky-top d-flex flex-column gap-2 fl navbar-expand-lg navbar-light  shadow-sm p-3 mb-5 bg-white  ">
       <div className="  d-flex justify-content-between  justify-content-center flex-nowrap w-100">
         <NavLink className=" logo navbar-brand" to="/">
           SHEIN
@@ -30,7 +30,7 @@ export default function NavBar() {
         </div>
 
         <div className="row " id="navbarSupportedContent">
-          <ul className=" d-flex justify-content-center  align-items-center navbar-nav  mb-lg-0 flex-nowrap flex-row">
+          <ul className=" ulist d-flex   align-items-center navbar-nav  mb-lg-0 flex-nowrap flex-row">
             <li className="nav-item dropdown">
               <a className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <BiSolidUser />

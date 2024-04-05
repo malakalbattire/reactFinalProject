@@ -149,7 +149,7 @@ export default function Cart() {
 
   return (
     <>
-      <div className="d-flex flex-column gap-3 align-items-end">
+      <div className="padBottom d-flex padBottom flex-column gap-3 d">
         {error ?? <p className="error"> {error}</p>}
         {item.length > 0 ? (
           <h2>

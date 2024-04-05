@@ -1,11 +1,12 @@
 
-.vhighh{
-    height: 100vh;
-}
 .navLinkk{
     text-decoration: none;
     color:black
 }
 html, body, #app, #app>div {
     height: 100%
+  }
+
+  .padBottom{
+    padding-bottom: 150px;
   }

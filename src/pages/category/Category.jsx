@@ -70,7 +70,7 @@ export default function Category() {
     return <Loader />;
   }
   return (
-    <div className="categoryContainer  ">
+    <div className="categoryContainer padBottom ">
       {error ?? <p className="error"> {error}</p>}
       {categoryProducts.length > 0 ? (
         categoryProducts.map(product => (

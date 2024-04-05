@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .logo {
   font-weight: bold;
   letter-spacing: 3px;
@@ -70,8 +71,16 @@
 }
 @media only screen and (max-width: 992px) {
   .search {
-    width: 80%;
+    width: 70%;
+    height: 30px;
+    
   }
+  .ulist{
+    flex-direction: column;
+  }
+}
+.ulist{
+  justify-content: center;
 }
 @media only screen and (max-width: 768px) {
   .searchInput {

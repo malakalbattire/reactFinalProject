@@ -130,9 +130,9 @@ export default function AllProducts() {
   return (
     <>
       {error ?? <p className="error"> {error}</p>}
-      <div className="d-flex flex-column gap-4 ">
-        <div className="container d-flex w-100 gap-3 justify-content-center">
-          <select onChange={e => getProductsSorted(page, e.target.value, e)}>
+      <div className="padBottom d-flex flex-column gap-4  ">
+        <div className="  container d-flex w-100 gap-3 justify-content-center">
+          <select  className='text-white bg-dark' onChange={e => getProductsSorted(page, e.target.value, e)}>
             <option selected>Sort Options</option>
             <option value="price">price</option>
             <option value="-price">-price</option>
@@ -151,7 +151,7 @@ export default function AllProducts() {
               getProductsByMin(page, min, max);
             }}
           >
-            <input
+            <input 
               type="text"
               value={max}
               onChange={e => {
@@ -168,7 +168,7 @@ export default function AllProducts() {
               placeholder="min"
             />
 
-            <input type="submit" value="Get" />
+            <input className='text-white bg-dark p-1' type="submit" value="Get" />
           </form>
         </div>
         <div className=" container categoryContainer flex-wrap ">

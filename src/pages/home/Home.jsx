@@ -9,7 +9,7 @@ export default function Home() {
   const { userName } = useContext(UserContext);
 
   return (
-    <div className="home vh-100">
+    <div className="padBottom home">
       <div
         className="container d-flex flex-column gap-3
    "

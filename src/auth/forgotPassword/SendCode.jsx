@@ -84,7 +84,7 @@ export default function SendCode() {
             </div>
           ))
         : ''}
-      <div className="container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
+      <div className="container  padBottom d-flex justify-content-center aligin-items-center flex-column w-50 gap-3">
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <h4 className="text-center">Forgot Password</h4>
           <label className="text-muted">Email:</label>

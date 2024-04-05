@@ -116,7 +116,7 @@ export default function ProductDetails() {
       {error ?? <p className="error"> {error}</p>}
       {
         <>
-          <div className="productDetails container d-flex ">
+          <div className="productDetails vh-100 container d-flex ">
             <div className=" mm container w-50">
               <>
                 <div className="">

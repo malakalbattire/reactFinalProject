@@ -87,7 +87,7 @@ export default function CreateOrder() {
   }
 
   return (
-    <div>
+    <div className='padBottom'>
       <h2 className="p-2">Place Order:</h2>
       {error ?? <p className="error"> {error}</p>}
       <div className="container">

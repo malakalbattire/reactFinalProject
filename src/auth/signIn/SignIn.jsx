@@ -86,7 +86,7 @@ export default function SignIn() {
             </div>
           ))
         : ''}
-      <div className="signin container d-flex justify-content-center aligin-items-center flex-column w-25 gap-3">
+      <div className="signin padBottom container d-flex justify-content-center aligin-items-center flex-column w-50 gap-3">
         <h2 className="text-center">Sign in</h2>
         <form className="d-flex flex-column gap-1" onSubmit={handleSubmit}>
           <label className="text-muted">Email:</label>
