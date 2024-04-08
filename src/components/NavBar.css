@@ -78,11 +78,6 @@
     display: static !important;
   }
 }
-.cartIcon{
-  list-style: none;
-  padding: 0;
-  width: fit-content;
-}
 
 @media only screen and (max-width: 768px) {
   .searchInput {
