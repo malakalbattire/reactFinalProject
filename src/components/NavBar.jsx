@@ -29,7 +29,7 @@ export default function NavBar() {
           </button>
         </div>
 
-        <div className="row userCart" id="navbarSupportedContent">
+        <div className="row " id="navbarSupportedContent">
           <ul className=" d-flex justify-content-center  align-items-center navbar-nav  mb-lg-0 flex-nowrap flex-row">
             <li className="nav-item dropdown">
               <a className="dropdown-toggle nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">

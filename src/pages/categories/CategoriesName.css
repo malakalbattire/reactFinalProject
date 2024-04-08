@@ -9,3 +9,10 @@
         }
          
 }
+@media screen and (max-width: 400px) {
+    
+       .categoryImgg{
+        width: 100px  ;
+       }
+         
+}
