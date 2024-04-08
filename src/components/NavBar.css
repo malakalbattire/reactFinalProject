@@ -73,18 +73,16 @@
   .search {
     width: 70%;
     height: 30px;
-    
   }
-  .ulist{
-    flex-direction: column;
+  .userCart{
+    display: static !important;
   }
 }
-.ulist{
-  justify-content: center;
-}
+
 @media only screen and (max-width: 768px) {
   .searchInput {
     width: 50%;
+    
   }
 }
 @media only screen and (max-width: 564px) {

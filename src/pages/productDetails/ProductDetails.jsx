@@ -28,6 +28,7 @@ export default function ProductDetails() {
     try {
       const { data } = await axios.get(`https://ecommerce-node4-five.vercel.app/products/${id}`);
       setProductDetails(data.product);
+      console.log (data.product)
     } catch (error) {
       setError('error loading products');
     } finally {
@@ -116,7 +117,10 @@ export default function ProductDetails() {
       {error ?? <p className="error"> {error}</p>}
       {
         <>
-          <div className="productDetails vh-100 container d-flex ">
+        <div className='d-flex flex-column gap-3 padBottom'>
+
+       
+          <div className="  productDetails  container d-flex ">
             <div className=" mm container w-50">
               <>
                 <div className="">
@@ -190,17 +194,26 @@ export default function ProductDetails() {
                   submit
                 </button>
               </form>
-              <div className="container bg-light p-4">
+              <div className="container bg-light p-2 d-flex flex-column gap-4">
                 {productDetails.reviews.map(revi => (
-                  <div className="review bg-white" key={revi._id}>
+                  <div className="review bg-white p-2 " key={revi._id}>
+                    <div className='d-flex border-bottom gap-2 p-2 align-items-center'>
+                    
+                     <img className='userImg  ' src= {revi.createdBy.image.secure_url}></img>
+                     <h3 className="text-capitaliz">{revi.createdBy.userName}</h3>
+
+                    </div>
+                     
                     <p>{revi.review}</p>
-                    <h2>{revi.comment}</h2>
-                    <span>{revi.rating}</span>
-                    <h3>{revi.name}</h3>
+                    <p>{revi.comment}</p>
+                   
+                   
+                    
                   </div>
                 ))}
               </div>
             </div>
+          </div>
           </div>
         </>
       }
